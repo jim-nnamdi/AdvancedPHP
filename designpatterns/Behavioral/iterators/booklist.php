@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace designpatterns\behavioral\iterators;
 use Countable;
-use iterator; 
+use Iterator; 
 
-class BookList implements Countable, iterator{
+class BookList implements Countable, Iterator{
     private $books = [];
     private $currentindex = 0;
 
