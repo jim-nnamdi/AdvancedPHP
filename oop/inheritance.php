@@ -18,8 +18,21 @@ class Inheritance
   {
     return $this->model;
   }
-  public function displayModel()
+  final public function displayModel()
   {
     echo "this is a model" . $this->model;
   }
 }
+
+// inherit the parent class 
+
+class ChildModel extends Inheritance
+{
+  public function wModel()
+  {
+    echo "hello" . $this->displayModel();
+  }
+}
+
+$t = new ChildModel("sam");
+$t->wModel();
