@@ -1,8 +1,9 @@
 <?php
 
 # r+ (read and write) : starts from the firstline 
-# w+ (read and write) : create file !exists. 
+# w+ (read and write) : clears existing content & create file !exists. 
 # x+ (read and write) : throw error if !exists.
+# a+ (read and write) : retains content and adds to it.
 
 $file = fopen("test.txt", "r");
 echo fread($file, filesize("test.txt"));
@@ -11,7 +12,7 @@ fclose($file);
 # fgets() gets the first line .
 
 $s_file = fopen("test.txt", "r");
-if (!feof($file)) {
+if (!feof($s_file)) {
   echo fgets($s_file);
   fclose($s_file);
 }

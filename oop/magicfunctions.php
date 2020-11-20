@@ -1,19 +1,28 @@
 <?php
 
-class Test
+class Magic
 {
-  public $model;
+  public $name;
+  public $color;
 
-  public function __construct($model = null)
+  function __construct($name, $color)
   {
-    if ($model) {
-      $this->model = $model;
-    }
+    $this->name = $name;
+    $this->color = $color;
   }
-  public function getModel()
+
+  function getName()
   {
-    echo "The model is :" . $this->model;
+    return $this->name;
+  }
+
+  function getColor()
+  {
+    return $this->color;
   }
 }
-$m = new Test();
-$m->getModel();
+
+# initialize an obj . 
+$test = new Magic("jim", "red");
+echo $test->getName() . "<br>";
+echo $test->getColor();
